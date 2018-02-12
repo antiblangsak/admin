@@ -12,5 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('family_registration', 'FamilyRegistrationController');
+
+Route::get('images/{filename}', function ($filename)
+{
+//    $file = Storage::disk('public')->get($filename);
+
+//    echo $file;
+    $file = 'storage/app/public/' . $filename;
+    return view('image_viewer', [
+        'file_name' => $filename,
+        'file_path' => $file
+    ]);
+
+})->name('image');
