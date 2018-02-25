@@ -168,7 +168,6 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Jadjoubran\LaravelAngular\Provider\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
