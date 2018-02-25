@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\BankAccount;
 use App\Models\FamilyRegistration;
-use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
