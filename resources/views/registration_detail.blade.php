@@ -20,6 +20,12 @@
 
                                 <h4><b>Email Pendaftar</b></h4>
                                 <p style="margin-bottom: 20px">{{ $data->user->email }}</p>
+
+                                <h4><b>Foto KTP Pendaftar</b></h4>
+                                <a href="{{ route('ktp_image_viewer', [$data->id]) }}" target="_blank">Lihat foto</a>
+
+                                <h4><b>Foto Kartu Keluarga</b></h4>
+                                <a href="{{ route('kk_image_viewer', [$data->id]) }}" target="_blank">Lihat foto</a>
                             </div>
                             <div class="col-lg-6">
                                 <h4><b>Rekening Bank Pendaftar</b></h4>
@@ -28,11 +34,13 @@
                                         @foreach($data->user->bankAccounts as $bankAcc)
                                             <li>
                                                 <p>
-                                                    {{ $bankAcc->bank_name }} Cabang {{ $bankAcc->branch_name }}
+                                                    {{ $bankAcc->bank_name }}
+                                                    <br>
+                                                    Cabang {{ $bankAcc->branch_name }}
                                                     <br>
                                                     {{ $bankAcc->account_number }} a/n. {{ $bankAcc->account_name }}
                                                     <br>
-                                                    <a target="_blank" href={{ route('image', ['filename' => $bankAcc->account_photo ]) }}><b>Lihat Foto Rekening</b></a>
+                                                    <a href="{{ route('bank_account_image_viewer', [$bankAcc->id]) }}" target="_blank">Lihat foto</a>
                                                 </p>
                                             </li>
                                         @endforeach
@@ -44,9 +52,9 @@
                                 @endif
                             </div>
                         </div>
-                        <div>
-                            asd
-                        </div>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a href="{{ route('family_registration.index') }}"><button type="button" class="btn btn-danger">Kembali</button></a>
                     </div>
                 </div>
             </div>

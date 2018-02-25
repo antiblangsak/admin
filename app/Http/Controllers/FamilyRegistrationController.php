@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FamilyMember;
 use App\Models\FamilyRegistration;
 use Illuminate\Http\Request;
 
@@ -70,7 +71,7 @@ class FamilyRegistrationController extends Controller
     public function show(FamilyRegistration $familyRegistration)
     {
         return view('registration_detail', [
-            'data' => $familyRegistration
+            'data' => $familyRegistration,
         ]);
     }
 

@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h2>Pendaftaran</h2>
+                        <h2>Pendaftaran Keluarga</h2>
                     </div>
 
                     <div class="panel-body">
@@ -17,9 +17,9 @@
                         @endif
 
                         @if ($count === 0)
-                            <h4>Tidak terdapat pendaftaran baru</h4>
+                            <p>Tidak ada data</p>
                         @else
-                            <h4>Terdapat {{ $count }} pendaftaran baru</h4>
+                            <p>Terdapat {{ $count }} pendaftaran baru</p>
 
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -53,9 +53,14 @@
                             </table>
 
                         @endif
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2>List Pendaftaran Terproses</h2>
+                    </div>
 
-                        <h4>List Pendaftaran Terproses</h4>
-
+                    <div class="panel-body">
                         @if ($completeCount > 0)
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -82,11 +87,10 @@
                                         </td>
                                     </tr>
                                 @endforeach
+                            </table>
                         @else
                             <p>Tidak ada data</p>
                         @endif
-
-                            </table>
                     </div>
                 </div>
             </div>

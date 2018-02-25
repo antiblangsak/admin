@@ -21,15 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('family_registration', 'FamilyRegistrationController');
 
-Route::get('images/{filename}', function ($filename)
-{
-//    $file = Storage::disk('public')->get($filename);
+Route::get('images/ktp/{id}', 'ImageController@showKtpImage')->name('ktp_image_viewer');
 
-//    echo $file;
-    $file = 'storage/app/public/' . $filename;
-    return view('image_viewer', [
-        'file_name' => $filename,
-        'file_path' => $file
-    ]);
+Route::get('images/kk/{id}', 'ImageController@showKkImage')->name('kk_image_viewer');
 
-})->name('image');
+Route::get('images/bank_account/{id}', 'ImageController@showBankAccountImage')->name('bank_account_image_viewer');
