@@ -11,7 +11,6 @@ class ImageController extends Controller
         $familyRegistration = FamilyRegistration::find($id);
         $img = \Image::make(base64_decode($familyRegistration->ktp_photo));
         return $img->response();
-
     }
 
     public function showKkImage($id) {

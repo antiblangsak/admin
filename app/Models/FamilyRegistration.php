@@ -30,6 +30,10 @@ class FamilyRegistration extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function familyMembers() {
+        return $this->hasMany('App\Models\FamilyMember');
+    }
+
     public function getStatusString() {
         if ($this->status == FamilyRegistration::STATUS_WAITING) {
             return 'Menunggu verifikasi';

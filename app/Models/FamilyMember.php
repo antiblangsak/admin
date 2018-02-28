@@ -35,4 +35,8 @@ class FamilyMember extends Model
     public function registeredAsClients() {
         return $this->hasMany('App\Models\Client');
     }
+
+    public function familyRegistration() {
+        return $this->belongsTo('App\Models\FamilyRegistration');
+    }
 }

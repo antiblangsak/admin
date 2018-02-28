@@ -26,3 +26,6 @@ Route::get('images/ktp/{id}', 'ImageController@showKtpImage')->name('ktp_image_v
 Route::get('images/kk/{id}', 'ImageController@showKkImage')->name('kk_image_viewer');
 
 Route::get('images/bank_account/{id}', 'ImageController@showBankAccountImage')->name('bank_account_image_viewer');
+
+Route::get('family_registration/add/{id}', 'FamilyRegistrationController@addFamilyMemberForm')->name('add_family_member_form');
+Route::post('family_registration/add/{id}', 'FamilyRegistrationController@addFamilyMember')->name('add_family_member');
